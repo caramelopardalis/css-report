@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <span class="content">あああああああああああああああああああああああああ</span>
+        <script>
+            var content = document.getElementsByClassName('content')[0];
+            while (0 < content.textContent.length) {
+                content.textContent = content.textContent.substring(0, content.textContent.length - 1);
+                var span = document.createElement('span');
+                content.appendChild(span);
+                content.removeChild(span);
+                console.log(width(content));
+            }
+            
+            function width(element) {
+                return element.offsetWidth;
+                return parseFloat(window.getComputedStyle(element, null).getPropertyValue("width"));
+            }
+        </script>
+    </body>
+</html>
